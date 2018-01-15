@@ -4,23 +4,46 @@
             <ion-icon name="menu"></ion-icon>
         </button>
         <ion-title>
-            Items
+            Document Control
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-list>
-        <button ion-item *ngFor="let item of items" (click)="onItemSelected(item)">
-            <h2>
-                {{ item.description }}
-            </h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Molestiae dolor nesciunt dolore, esse excepturi nemo, atque doloribus.
-                A praesentium, doloremque, quibusdam esse, fugiat quas, obcaecati non
-                laboriosam ducimus natus vero.
-            </p>
-        </button>
-    </ion-list>
-</ion-content>
+        <ion-list>
+          <!-- First Level -->
+          <ion-list-header *ngFor="let item of information; let i = index" no-lines no-padding>
+            <!-- Toggle Button -->
+            <button ion-item (click)='onItemSelected(item)' (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+              <ion-icon item-left name="filing" *ngIf="!item.open"></ion-icon>
+              <ion-icon item-left name="filing" *ngIf="item.open"></ion-icon>
+                {{ item.name }}
+            </button>
+       
+            <ion-list *ngIf="item.children && item.open" no-lines>
+              <!-- Second Level -->
+              <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
+                <!-- Toggle Button -->
+                <button ion-item (click)='onChildSelected(item)' (click)="toggleItem(i, j)" *ngIf="child.children" class="child" detail-none>
+                  <ion-icon item-left name="folder" *ngIf="!child.open"></ion-icon>
+                  <ion-icon item-left name="folder-open" *ngIf="child.open"></ion-icon>
+                  {{ child.name }}
+                </button>
+       
+                <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
+                  <h2>{{ child.name }}</h2>
+                </ion-item>
+       
+                <ion-list *ngIf="child.children && child.open">
+                  <!-- Third Level -->
+                  <ion-item *ngFor="let item of child.children; let k = index" detail-none class="child-item" text-wrap>
+                    <h2>{{ item.name }}</h2>
+                  </ion-item>
+                </ion-list>
+       
+              </ion-list-header>
+            </ion-list>
+            
+          </ion-list-header>
+        </ion-list>
+      </ion-content>

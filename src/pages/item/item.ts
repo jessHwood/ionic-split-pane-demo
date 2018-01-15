@@ -14,6 +14,7 @@ export class ItemPage extends _DetailPage {
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         super();
         this.item = navParams.data;
+        console.log(this.item);
     }
 
 }

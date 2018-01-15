@@ -1,10 +1,21 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>{{ item.description }}</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, quasi earum in dolor cupiditate commodi culpa voluptates
-    optio hic architecto saepe enim corporis laborum, ipsum expedita ducimus laudantium. Fugit, sint.
-</ion-content>
+        <ion-card style="padding:30px;background:#efefef">
+          <ion-list *ngFor= "let child of item.children; let j= index">
+            <ion-row>
+              <ion-col col-12 col-lg-3>
+                <button ion-item clear>
+                  <ion-icon item-left name="folder-open"></ion-icon>
+                  <h4>{{child.name}}</h4>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-list>
+        </ion-card>
+      </ion-content>
+
+

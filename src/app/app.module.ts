@@ -10,6 +10,8 @@ import {
     ItemPage,
     PlaceholderPage } from '../pages';
 
+import  { HttpModule } from '@angular/http';
+
 @NgModule({
     declarations: [
         MyApp,
@@ -19,6 +21,7 @@ import {
     ],
     imports: [
         BrowserModule,
+        HttpModule,
         IonicModule.forRoot(MyApp)
     ],
     bootstrap: [IonicApp],

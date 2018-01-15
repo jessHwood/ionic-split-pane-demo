@@ -1,0 +1,82 @@
+{
+    "items": [
+        {
+            "name": "Project Name 1",
+            "children": [
+                {
+                    "id": "1",                                    
+                    "name": "Project 1 File1"
+                },
+                {
+                    "id": "2",                                    
+                    "name": "Project 1 File2"
+                }
+            ]
+        },
+        {
+            "name": "Project Name 2",
+            "children": [
+                {
+                    "name": "Project 2 Folder1",
+                    "children": [
+                        {
+                    "id": "3",                                    
+                    "name": "Project 2 file1"
+                },
+                {
+                    "id": "4",                                    
+                    "name": "Project 2 file2"
+                }
+                    ]
+                },
+                {
+                    "name": "Project 2 Folder2",
+                    "children": [
+                        {
+                            "id": "4",
+                            "name": "Project2 File 2.2.1"
+                        },
+                        {
+                            "id": "5",
+                            "name": "Project2 File 2.2.2"
+                        },
+                        {
+                            "id": "6",
+                            "name": "Project2 File 2.2.3"
+                        },
+                        {
+                            "id": "7",
+                            "name": "Project2 File 2.2.4"
+                        }
+                    ]
+                },
+                {
+                    "name": "Project 2 Folder3",
+                    "children": [
+                        {
+                            "name": "Project2 File 2.3.1",                    
+                            "id": "8"
+                        },
+                        {
+                            "name": "Project2 File 2.3.2",
+                            "id": "9"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Project Name 3",
+            "children": [
+                {
+                            "id": "10",
+                            "name": "Project File 3.1"
+                        },
+                        {
+                            "id": "11",
+                            "name": "Project File 3.2"
+                        }
+            ]
+        }
+    ]
+}
