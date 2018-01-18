@@ -1,0 +1,65 @@
+{
+    "files": [
+        {
+            "_id": "34",
+            "folderObjId": "2",
+            "name": "MetroFile1",
+            "size": 8,
+            "type":"photo",
+            "description": "photo of job site",
+            "uploadedBy":"23",
+            "hash": "fogij",
+            "status": "active"
+
+        },
+        {
+            "_id": "36",
+            "folderObjId": "2",
+            "name": "MetroFile2",
+            "size": 8,
+            "type":"file",
+            "description": "architect drawings",
+            "uploadedBy":"24",
+            "hash": "asoiaerauijr",
+            "status": "active"
+
+        },
+        {
+            "_id": "41",
+            "folderObjId": "2",
+            "name": "CityFile1",
+            "size": 8,
+            "type":"file",
+            "description": "blueprints",
+            "uploadedBy":"25",
+            "hash": "aserewa",
+            "status": "active"
+
+        },
+        {
+            "_id": "52",
+            "folderObjId": "2",
+            "name": "CityFile2",
+            "size": 8,
+            "type":"photo",
+            "description": "photo of job site",
+            "uploadedBy":"26",
+            "hash": "tryort",
+            "status": "active"
+
+        },
+        {
+            "_id": "61",
+            "folderObjId": "2",
+            "name": "CityFile3",
+            "size": 8,
+            "type":"file",
+            "description": "signed document",
+            "uploadedBy":"29",
+            "hash": "ertiuet",
+            "status": "active"
+
+        }
+
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "folders": [
+        {
+            "_id": "2",
+            "driveObjId": "92",
+            "name": "MetroFolder1",
+            "parent": "",
+            "hash": "asoiejr",
+            "status": "active"
+
+        },
+        {
+            "_id": "3",
+            "driveObjId": "92",
+            "name": "MetroFolder2",
+            "parent": "2",
+            "hash": "asoiuijr",
+            "status": "active"
+
+        },
+        {
+            "_id": "4",
+            "driveObjId": "92",
+            "name": "CityFolder1",
+            "parent": "",
+            "hash": "aeriejr",
+            "status": "active"
+
+        },
+        {
+            "_id": "5",
+            "driveObjId": "92",
+            "name": "CityFolder2",
+            "parent": "4",
+            "hash": "awoeruejr",
+            "status": "active"
+
+        },
+        {
+            "_id": "6",
+            "driveObjId": "92",
+            "name": "CityFolder3",
+            "parent": "4",
+            "hash": "aswerejr",
+            "status": "active"
+
+        }
+
+    ]
+}

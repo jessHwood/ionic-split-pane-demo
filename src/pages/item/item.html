@@ -4,18 +4,17 @@
 </ion-header>
 
 <ion-content padding>
-        <ion-card style="padding:30px;background:#efefef">
-          <ion-list *ngFor= "let child of item.children; let j= index">
+        <ion-card>
+          <ion-list *ngFor= "let file of files" >
             <ion-row>
-              <ion-col col-12 col-lg-3>
                 <button ion-item clear>
-                  <ion-icon item-left name="folder-open"></ion-icon>
-                  <h4>{{child.name}}</h4>
+                  <ion-icon item-left name="document"></ion-icon>
+                  <h4>{{ file.name }}</h4>
                 </button>
-              </ion-col>
             </ion-row>
           </ion-list>
         </ion-card>
-      </ion-content>
+
+</ion-content>
 
 

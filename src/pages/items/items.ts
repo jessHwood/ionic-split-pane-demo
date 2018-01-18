@@ -18,19 +18,10 @@ import 'rxjs/add/operator/map'
 export class ItemsPage extends _MasterPage {
 
     information: any[];
+    files: any[];
 
-    // items: Array<any> = [
-    //     { id: 0, description: 'Project1' },
-    //     { id: 1, description: 'Project2' },
-    //     { id: 2, description: 'Project3' },
-    //     { id: 3, description: 'Project4' },
-    //     { id: 4, description: 'Project5' },
-    //     { id: 5, description: 'Project6' },
-    //     { id: 6, description: 'Project7' },
-    //     { id: 7, description: 'Project8' },
-    //     { id: 8, description: 'Project9' },
-    //     { id: 9, description: 'Project10' },
-    // ];
+    showLevel1 = null;
+    showLevel2 = null;
 
     constructor(
         public navCtrl: NavController,
@@ -38,19 +29,60 @@ export class ItemsPage extends _MasterPage {
         private navProxy: NavProxyService,
         private http: Http) {
         super();
-        let localData = http.get('assets/information.json').map(res => res.json().items);
-        localData.subscribe(data => {
+        // let localData = http.get('assets/information.json').map(res => res.json().items);
+        // localData.subscribe(data => {
+        //     this.information = data;
+        //     console.log(data);
+        // })
+
+        let folderData = http.get('assets/folders.json').map(res => res.json().folders);
+        folderData.subscribe(data => {
             this.information = data;
-            console.log(data);
         })
     }
 
-    toggleSection(i) {
-        this.information[i].open = !this.information[i].open;
-    }
+    isLevel1Shown(idx) {
+        return this.showLevel1 === idx;
+      };
+      
+      isLevel2Shown(idx) {
+        return this.showLevel2 === idx;
+      };
+    
+    toggleLevel1(idx) {
+        if (this.isLevel1Shown(idx)) {
+          this.showLevel1 = null;
+        } else {
+          this.showLevel1 = idx;
+        }
+      };
+      
+      toggleLevel2(idx) {
+        if (this.isLevel2Shown(idx)) {
+          this.showLevel1 = null;
+          this.showLevel2 = null;
+        } else {
+          this.showLevel1 = idx;
+          this.showLevel2 = idx;
+        }
+      };
 
-    toggleItem(i, j) {
-        this.information[i].children[j].open = !this.information[i].children[j].open;
+    // toggleSection(i) {
+    //     this.information[i].open = !this.information[i].open;
+    // }
+
+    // toggleItem(i, j) {
+    //     this.information[i].children[j].open = !this.information[i].children[j].open;
+    // }
+
+    pushItem(folderId) {
+        console.log(folderId);
+        let fileData = this.http.get('assets/files.json/' + folderId).map(res => res.json().files);
+        fileData.subscribe(data => {
+            this.files = data;
+        })
+        this.navProxy.pushDetail(ItemPage, this.files);
+        console.log(this.files);
     }
 
     onItemSelected(item) {
@@ -60,8 +92,7 @@ export class ItemsPage extends _MasterPage {
         this.navProxy.pushDetail(ItemPage, item);
     }
 
-    onChildSelected(item) {
-        this.navProxy.pushDetail(ItemPage, item.children);
-    }
+    
+
 
 }

@@ -19,6 +19,9 @@ export class MyApp {
     masterPage: any = null;
     detailPage: any = null;
 
+    showLevel1 = null;
+    showLevel2 = null;
+
     constructor(
         platform: Platform,
         statusBar: StatusBar,

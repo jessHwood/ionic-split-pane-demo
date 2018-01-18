@@ -5,11 +5,11 @@
             "children": [
                 {
                     "id": "1",                                    
-                    "name": "Project 1 File1"
+                    "name": "Project 1 Folder1"
                 },
                 {
                     "id": "2",                                    
-                    "name": "Project 1 File2"
+                    "name": "Project 1 Folder2"
                 }
             ]
         },
@@ -70,11 +70,11 @@
             "children": [
                 {
                             "id": "10",
-                            "name": "Project File 3.1"
+                            "name": "Project3 Folder1"
                         },
                         {
                             "id": "11",
-                            "name": "Project File 3.2"
+                            "name": "Project3 Folder2"
                         }
             ]
         }
