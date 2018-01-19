@@ -10,43 +10,27 @@
 </ion-header>
 
 <ion-content>
-        <ion-list>
-          <!-- First Level -->
-          <ion-list-header *ngFor="let item of information; let i = index" no-lines no-padding>
-            <!-- Toggle Button -->
-            <button ion-item (click)="pushItem(item._id)" (click)="toggleLevel1('idx' +i)" [ngClass]="{active: isLevel1Shown('idx' +i)}">
-              <ion-icon item-left [name]="isLevel1Shown('idx'+i) ? 'arrow-dropdown' : 'arrow-dropright'" ></ion-icon>
-                {{ item.name }}
-                {{ item._id }}
-            </button>
-
-       
-            <!-- <ion-list *ngIf="item.open" no-lines>
-              <!-- Second Level -->
-              <!-- <ion-list-header *ngFor="let file of files; let j = index" no-padding> -->
-                <!-- Took out toggle here (click)="toggleItem(i, j)", so that it doesn't show files in side pane -->
-                <!-- <button ion-item click= "onItemSelected(item)"(click)="pushItem(i, j)" class="file" detail-none>
-                  <ion-icon item-left name="arrow-dropright" *ngIf="!file.open"></ion-icon>
-                  <ion-icon item-left name="arrow-dropdown" *ngIf="file.open"></ion-icon>
-                  {{ file.name }}
-                </button> --> 
-       
-                <!-- <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" (click)="pushItem(i, j)" text-wrap>
-                    <ion-icon item-left name="arrow-dropright" *ngIf="!child.open"></ion-icon>
-                <ion-icon item-left name="arrow-dropdown" *ngIf="child.open"></ion-icon>
-                  <h2>{{ child.name }}</h2>
-                </ion-item> -->
-       
-                <!-- <ion-list *ngIf="child.children && child.open">
-                  <!-- Third Level -->
-                  <!-- <ion-item (click)='onItemSelected(item)' *ngFor="let item of child.children; let k = index" detail-none class="child-item" text-wrap>
-                    <h2>{{ item.name }}</h2>
-                  </ion-item>
-                </ion-list> --> -->
-       
-              <!-- </ion-list-header>
-            </ion-list> -->
-            
-          </ion-list-header>
-        </ion-list>
+    <ion-list>
+        <ion-item *ngFor="let drive of drives; let i=index"text-wrap (click)="toggleLevel1('idx'+i)" [ngClass]="{active: isLevel1Shown('idx'+i)}">
+          <h4  (click)="getFolders(drive._id)" >
+            {{ drive.name }}
+            <ion-icon color="success" item-right [name]="isLevel1Shown('idx'+i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+          </h4>
+          <ion-list *ngIf="isLevel1Shown('idx'+i)">
+            <ion-item *ngFor="let folder of folders; let i2=index"  text-wrap (click)="toggleLevel2('idx'+i+'idx'+i2)" [ngClass]="{active: isLevel2Shown('idx'+i+'idx'+i2)}">
+              <h4 (click)="getSubfolders(folder._id)">
+                {{ folder.name }}
+                <ion-icon color="success" item-right [name]="isLevel2Shown('idx'+i+'idx'+i2) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+              </h4>
+              <ion-list *ngIf="isLevel2Shown('idx'+i+'idx'+i2)">
+                <ion-item *ngFor="let child of folder.children" text-wrap>
+                  <h3>
+                  {{ child.name }}
+                   </h3>
+                </ion-item>
+              </ion-list>
+            </ion-item>
+          </ion-list>
+        </ion-item>
+      </ion-list>
       </ion-content>

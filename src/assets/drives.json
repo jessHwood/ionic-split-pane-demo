@@ -1,0 +1,14 @@
+{
+    "drives": [
+    {
+        "_id" : "5a61164109664715e089c6b7",
+        "owner" : "5a52cce526520b001492c3d7",
+        "type" : "project",
+        "name" : "Project ABC Drive",
+        "projectObjId" : "5a611616d0d5d11d6c234782",
+        "createdAt" : 1516299747275,
+        "audit" : [ ]
+}
+    ]
+}  
+    

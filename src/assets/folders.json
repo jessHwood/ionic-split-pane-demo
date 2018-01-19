@@ -1,50 +1,29 @@
 {
     "folders": [
         {
-            "_id": "2",
-            "driveObjId": "92",
-            "name": "MetroFolder1",
-            "parent": "",
-            "hash": "asoiejr",
-            "status": "active"
-
-        },
-        {
-            "_id": "3",
-            "driveObjId": "92",
-            "name": "MetroFolder2",
-            "parent": "2",
-            "hash": "asoiuijr",
-            "status": "active"
-
-        },
-        {
-            "_id": "4",
-            "driveObjId": "92",
-            "name": "CityFolder1",
-            "parent": "",
-            "hash": "aeriejr",
-            "status": "active"
-
-        },
-        {
-            "_id": "5",
-            "driveObjId": "92",
-            "name": "CityFolder2",
-            "parent": "4",
-            "hash": "awoeruejr",
-            "status": "active"
-
-        },
-        {
-            "_id": "6",
-            "driveObjId": "92",
-            "name": "CityFolder3",
-            "parent": "4",
-            "hash": "aswerejr",
-            "status": "active"
-
-        }
-
+            "_id" : "5a6118b009664715e089c6b8",
+            "driveObjId" : "5a61164109664715e089c6b7",
+            "name" : "Folder A",
+            "hash" : "Xic8GU28cto02EFynY3XK6vp1wAEJZbZMxTpQ6y6FW7IsUpjeCEsf90lMMCL6FFTv23cf8a7Qpd67pt62nKD6S2YaPj556I7S0eIvPdGYLD8lPo9OPv6RsPBVV2uCWkUR7",
+            "status" : "active",
+            "children": [
+                {
+                        "_id" : "5a611ad109664715e089c6bb",
+                        "driveObjId" : "5a61164109664715e089c6b7",
+                        "name" : "Folder A-a",
+                        "parent" : "5a6118b009664715e089c6b8",
+                        "hash" : "zRdR4HfR4g9UxBvmSW39FbpJ1GMv6sBdP0ikg77uTfQksJBfxE0ocul08MPYbIvEW0l5KPcRj92Unuvwr0f4VOYKZtGP5waKbS77QvJXvYvNEg0Pyv8MSfU3om9JTt6VUf",
+                        "status" : "active"
+                },
+                {
+                        "_id" : "5a611b2b09664715e089c6bc",
+                        "driveObjId" : "5a61164109664715e089c6b7",
+                        "name" : "Folder A-b",
+                        "parent" : "5a6118b009664715e089c6b8",
+                        "hash" : "fKfGlKM31HBXKXilUzhRDI3l5BU9dtaGWS1f0mpKjzcyIEW47ap8mNoFCbr1BZN4Vbm6nj0Q70nV1XIUBl0ue74qXGWCoCHeSXaZmoW1QTmKtq6lNqW5CK655Vk4UbDkPn",
+                        "status" : "active"
+                }
+                ]
+    }
     ]
 }

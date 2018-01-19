@@ -17,8 +17,9 @@ import 'rxjs/add/operator/map'
 })
 export class ItemsPage extends _MasterPage {
 
+    drives: any[];
     information: any[];
-    files: any[];
+    folders: any[];
 
     showLevel1 = null;
     showLevel2 = null;
@@ -35,9 +36,15 @@ export class ItemsPage extends _MasterPage {
         //     console.log(data);
         // })
 
+        let driveData = http.get('assets/drives.json').map(res => res.json().drives);
+        driveData.subscribe(data => {
+            this.drives = data;
+        })
+
         let folderData = http.get('assets/folders.json').map(res => res.json().folders);
         folderData.subscribe(data => {
-            this.information = data;
+            this.folders = data;
+            console.log(this.folders);
         })
     }
 
@@ -67,22 +74,24 @@ export class ItemsPage extends _MasterPage {
         }
       };
 
-    // toggleSection(i) {
-    //     this.information[i].open = !this.information[i].open;
-    // }
-
-    // toggleItem(i, j) {
-    //     this.information[i].children[j].open = !this.information[i].children[j].open;
-    // }
-
-    pushItem(folderId) {
-        console.log(folderId);
-        let fileData = this.http.get('assets/files.json/' + folderId).map(res => res.json().files);
+    getFolders(driveId) {
+        console.log(driveId);
+        let fileData = this.http.get('assets/folders.json/' + driveId).map(res => res.json().folders);
         fileData.subscribe(data => {
-            this.files = data;
+            this.folders = data;
         })
-        this.navProxy.pushDetail(ItemPage, this.files);
-        console.log(this.files);
+        this.navProxy.pushDetail(ItemPage, this.folders);
+        console.log(this.folders);
+    }
+
+    getSubfolders(folderId) {
+        console.log(folderId);
+        let fileData = this.http.get('assets/folders.json/' + folderId).map(res => res.json().folders);
+        fileData.subscribe(data => {
+            this.folders = data;
+        })
+        this.navProxy.pushDetail(ItemPage, this.folders);
+        console.log(this.folders);
     }
 
     onItemSelected(item) {
