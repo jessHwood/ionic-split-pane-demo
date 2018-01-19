@@ -24,7 +24,7 @@
               </h4>
               <ion-list *ngIf="isLevel2Shown('idx'+i+'idx'+i2)">
                 <ion-item *ngFor="let child of folder.children" text-wrap>
-                  <h3>
+                  <h3 (click)="getFiles(child._id)">
                   {{ child.name }}
                    </h3>
                 </ion-item>

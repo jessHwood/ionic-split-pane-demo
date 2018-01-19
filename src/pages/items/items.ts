@@ -76,7 +76,7 @@ export class ItemsPage extends _MasterPage {
 
     getFolders(driveId) {
         console.log(driveId);
-        let fileData = this.http.get('assets/folders.json/' + driveId).map(res => res.json().folders);
+        let fileData = this.http.get('assets/folders.json').map(res => res.json().folders);
         fileData.subscribe(data => {
             this.folders = data;
         })
@@ -86,7 +86,7 @@ export class ItemsPage extends _MasterPage {
 
     getSubfolders(folderId) {
         console.log(folderId);
-        let fileData = this.http.get('assets/folders.json/' + folderId).map(res => res.json().folders);
+        let fileData = this.http.get('assets/folders.json').map(res => res.json().folders);
         fileData.subscribe(data => {
             this.folders = data;
         })
@@ -94,12 +94,22 @@ export class ItemsPage extends _MasterPage {
         console.log(this.folders);
     }
 
-    onItemSelected(item) {
-        // Rather than using:
-        //     this.navCtrl.push(...)
-        // Use our proxy:
-        this.navProxy.pushDetail(ItemPage, item);
+    getFiles(subfolderId) {
+        console.log(subfolderId);
+        let fileData = this.http.get('assets/folders.json').map(res => res.json().folders);
+        fileData.subscribe(data => {
+            this.folders = data;
+        })
+        this.navProxy.pushDetail(ItemPage, this.folders);
+        console.log(this.folders);
     }
+
+    // onItemSelected(item) {
+    //     // Rather than using:
+    //     //     this.navCtrl.push(...)
+    //     // Use our proxy:
+    //     this.navProxy.pushDetail(ItemPage, item);
+    // }
 
     
 

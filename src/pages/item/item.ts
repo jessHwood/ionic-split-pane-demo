@@ -16,15 +16,15 @@ export class ItemPage extends _DetailPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http) {
         super();
-        let fileData = http.get('assets/files.json').map(res => res.json().files);
-        fileData.subscribe(data => {
-            this.files = data;
-            this.folderObjId = data.folderObjId;
-            console.log(this.files);
-        })
+        // let fileData = http.get('assets/files.json').map(res => res.json().files);
+        // fileData.subscribe(data => {
+        //     this.files = data;
+        //     this.folderObjId = data[0].folderObjId;
+        //     console.log(this.files);
+        // })
 
-        // this.item = navParams.data;
-        // console.log(this.item);
+        this.item = navParams.data;
+        console.log(this.item);
     }
 
 }
